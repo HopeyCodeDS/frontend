@@ -1,0 +1,68 @@
+{
+  "warehouses": [
+    {
+      "id": "1",
+      "capacity": 1000,
+      "currentLoad": 500,
+      "sellerId": "1",
+      "profilePic": "https://img.freepik.com/free-vector/industrial-buildings-isometric-composition-with-fabric-storage-shed-set-trucks-with-containers-boxes_1284-31602.jpg?t=st=1730438825~exp=1730442425~hmac=a92c57d6aefac588a3433169af4658b168e22d93d31da0b0c88db6dd2f98b12c&w=1380"
+    },
+    {
+      "id": "2",
+      "capacity": 800,
+      "currentLoad": 300,
+      "sellerId": "2",
+      "profilePic": "https://img.freepik.com/free-vector/industrial-buildings-isometric-composition-with-fabric-storage-shed-set-trucks-with-containers-boxes_1284-31602.jpg?t=st=1730438825~exp=1730442425~hmac=a92c57d6aefac588a3433169af4658b168e22d93d31da0b0c88db6dd2f98b12c&w=1380"
+    },
+    {
+      "id": "3",
+      "capacity": 1200,
+      "currentLoad": 900,
+      "sellerId": "3",
+      "profilePic": "https://img.freepik.com/free-vector/industrial-buildings-isometric-composition-with-fabric-storage-shed-set-trucks-with-containers-boxes_1284-31602.jpg?t=st=1730438825~exp=1730442425~hmac=a92c57d6aefac588a3433169af4658b168e22d93d31da0b0c88db6dd2f98b12c&w=1380"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "a1",
+      "licensePlate": "ABC123",
+      "materialType": "CEMENT",
+      "arrivalTime": "2024-10-09T08:00:00",
+      "warehouseId": "1",
+      "sellerId": "1"
+    },
+    {
+      "id": "a2",
+      "licensePlate": "XYZ789",
+      "materialType": "CEMENT",
+      "arrivalTime": "2024-10-09T10:00:00",
+      "warehouseId": "1",
+      "sellerId": "1"
+    },
+    {
+      "id": "b1",
+      "licensePlate": "DEF456",
+      "materialType": "IRON-ORE",
+      "arrivalTime": "2024-11-01T09:30:00",
+      "warehouseId": "2",
+      "sellerId": "2"
+    },
+    {
+      "id": "b2",
+      "licensePlate": "GHI012",
+      "materialType": "IRON-ORE",
+      "arrivalTime": "2024-11-01T11:15:00",
+      "warehouseId": "2",
+      "sellerId": "1"
+    },
+    {
+      "id": "c1",
+      "licensePlate": "JKL345",
+      "materialType": "GYPSUM",
+      "arrivalTime": "2024-10-31T15:00:00",
+      "warehouseId": "3",
+      "sellerId": "1"
+    }
+  ]
+}
+
