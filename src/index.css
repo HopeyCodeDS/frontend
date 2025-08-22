@@ -1,68 +1,223 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@layer base {
+    :root {
+        /* KdG Dark Industrial Theme */
+        --background: 222 15% 8%; /* Very dark background */
+        --foreground: 210 15% 92%; /* Light text */
+        --card: 222 15% 10%; /* Dark cards */
+        --card-foreground: 210 15% 92%;
+        --popover: 222 15% 10%;
+        --popover-foreground: 210 15% 92%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+        /* Primary Brand Colors */
+        --primary: 210 100% 60%; /* Bright blue for accents */
+        --primary-foreground: 222 15% 8%;
+        --primary-dark: 210 100% 50%;
+        --primary-light: 210 100% 70%;
+
+        /* Secondary Industrial Colors */
+        --secondary: 45 90% 60%; /* Orange for warnings */
+        --secondary-foreground: 222 15% 8%;
+        --accent: 120 80% 50%; /* Green for success */
+        --accent-foreground: 222 15% 8%;
+
+        /* Status Colors */
+        --success: 120 60% 50%;
+        --success-foreground: 222 15% 8%;
+        --warning: 45 90% 60%;
+        --warning-foreground: 222 15% 8%;
+        --destructive: 0 70% 60%;
+        --destructive-foreground: 210 15% 92%;
+
+        /* Material Type Colors (darker versions) */
+        --gypsum: 45 30% 40%;
+        --iron-ore: 15 40% 20%;
+        --cement: 210 20% 35%;
+        --petcoke: 0 0% 20%;
+        --slag: 30 25% 30%;
+
+        /* UI Elements */
+        --muted: 222 15% 12%; /* Slightly lighter than cards */
+        --muted-foreground: 210 10% 60%; /* Muted text */
+        --border: 222 15% 18%; /* Subtle borders */
+        --input: 222 15% 15%; /* Input backgrounds */
+        --ring: 210 100% 60%; /* Focus rings */
+
+        /* Sidebar specific */
+        --sidebar-background: 222 20% 6%; /* Darker than main background */
+        --sidebar-foreground: 210 15% 85%;
+        --sidebar-primary: 210 100% 60%;
+        --sidebar-primary-foreground: 222 20% 6%;
+        --sidebar-accent: 222 15% 12%;
+        --sidebar-accent-foreground: 210 15% 92%;
+        --sidebar-border: 222 15% 15%;
+        --sidebar-ring: 210 100% 60%;
+
+        /* Chart and Data Visualization */
+        --chart-1: 210 100% 50%; /* Primary blue */
+        --chart-2: 45 100% 50%; /* Orange */
+        --chart-3: 120 100% 40%; /* Green */
+        --chart-4: 280 100% 60%; /* Purple */
+        --chart-5: 15 70% 55%; /* Red-orange */
+
+        /* Gradients for Visual Appeal */
+        --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 40%));
+        --gradient-secondary: linear-gradient(135deg, hsl(45 100% 50%), hsl(45 100% 45%));
+        --gradient-subtle: linear-gradient(180deg, hsl(220 15% 98%), hsl(220 15% 95%));
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-industrial: 0 8px 25px -5px hsl(210 100% 50% / 0.15);
+
+        /* Animations */
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-fast: all 0.15s ease-out;
+
+        /* Borders */
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 220 25% 8%;
+        --foreground: 220 15% 92%;
+        --card: 220 25% 10%;
+        --card-foreground: 220 15% 92%;
+        --popover: 220 25% 10%;
+        --popover-foreground: 220 15% 92%;
+        --primary: 210 100% 60%;
+        --primary-foreground: 220 25% 8%;
+        --secondary: 45 80% 60%;
+        --secondary-foreground: 220 25% 8%;
+        --muted: 220 25% 12%;
+        --muted-foreground: 220 10% 60%;
+        --accent: 120 80% 50%;
+        --accent-foreground: 220 25% 8%;
+        --destructive: 0 70% 60%;
+        --destructive-foreground: 220 15% 92%;
+        --border: 220 25% 15%;
+        --input: 220 25% 15%;
+        --ring: 210 100% 60%;
+    }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground font-sans;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@layer components {
+    .status-indicator {
+        @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+    }
+
+    .status-online {
+        @apply bg-success/10 text-success border border-success/20;
+    }
+
+    .status-pending {
+        @apply bg-warning/10 text-warning border border-warning/20;
+    }
+
+    .status-error {
+        @apply bg-destructive/10 text-destructive border border-destructive/20;
+    }
+
+    .material-gypsum {
+        @apply bg-gypsum text-foreground;
+    }
+
+    .material-iron-ore {
+        @apply bg-iron-ore text-white;
+    }
+
+    .material-cement {
+        @apply bg-cement text-foreground;
+    }
+
+    .material-petcoke {
+        @apply bg-petcoke text-white;
+    }
+
+    .material-slag {
+        @apply bg-slag text-white;
+    }
+
+    .warehouse-visual {
+        @apply relative border-2 border-border rounded-lg p-4 bg-card;
+        transition: var(--transition-smooth);
+    }
+
+    .warehouse-visual:hover {
+        @apply shadow-lg scale-105;
+    }
+
+    .warehouse-full {
+        @apply border-warning bg-warning/5;
+    }
+
+    .warehouse-overflow {
+        @apply border-destructive bg-destructive/5;
+    }
+
+    .dashboard-card {
+        @apply bg-card border border-border rounded-lg p-6 shadow-sm;
+        transition: var(--transition-smooth);
+    }
+
+    .dashboard-card:hover {
+        @apply shadow-md;
+    }
+
+    .metric-card {
+        @apply bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-4;
+    }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+}
+
+/* Animation keyframes */
+@keyframes pulse-dot {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-dot {
+    animation: pulse-dot 2s infinite;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
 }
