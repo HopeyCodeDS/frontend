@@ -10,6 +10,7 @@ import {
     Warehouse
 } from '@/types';
 import {transformBackendPurchaseOrders, transformBackendTruck, transformBackendTrucks} from '@/utils/dataTransformers';
+import axios from 'axios'
 
 // API base URLs
 const API_BASE_URLS = {
@@ -19,30 +20,20 @@ const API_BASE_URLS = {
     WATERSIDE: '/api/waterside'
 };
 
-// Generic API call function with error handling
+// apiCall function to use axios instead of fetch
 const apiCall = async (url: string, options: RequestInit = {}) => {
     try {
-        const response = await fetch(url, {
+        const response = await axios({
+            method: options.method || 'GET',
+            url: url,
+            data: options.body ? JSON.parse(options.body as string) : undefined,
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                 ...options.headers
-            },
-            ...options
+            }
         });
 
-        if (!response.ok) {
-            let errorMessage = `API call failed: ${response.status}`;
-            try {
-                const errorData = await response.text(); // Use text() instead of json() for 500 errors
-                errorMessage += ` - ${errorData}`;
-            } catch (e) {
-                // If we can't read the error response
-            }
-            throw new Error(errorMessage);
-        }
-
-        return await response.json();
+        return response.data;
     } catch (error) {
         console.error('API call error:', error);
         // Return null to indicate failure
