@@ -18,6 +18,7 @@ import SecurityContext from "./context/SecurityContext.tsx";
 import { RouteGuard } from "./components/RouteGuard.tsx";
 import { RoleGuard } from "./components/RoleGuard.tsx";
 import { PAGE_ACCESS_ROLES } from './lib/constants.ts';
+import { Toaster } from "./components/ui/toaster"
 
 const queryClient = new QueryClient();
 
@@ -225,6 +226,7 @@ const App = () => {
                 </Box>
               </Box>
             </Box>
+            <Toaster />
           </BrowserRouter>
         </ThemeProvider>
       </SecurityContextProvider>

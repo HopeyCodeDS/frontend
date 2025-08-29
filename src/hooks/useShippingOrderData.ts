@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { watersideAPI } from '@/services/apiService';
 import { mockData } from '@/lib/mock-data';
-import { ShippingOrder, ShippingOrderStatus } from '@/types';
+import { ShippingOrderStatus } from '@/types';
 
 // Query keys for shipping order data
 export const shippingOrderKeys = {

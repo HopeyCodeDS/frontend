@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { useWarehouses } from './useWarehouseData';
 import { useTruckData } from './useTruckData';
 import { useAppointments } from './useAppointmentsData';
