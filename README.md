@@ -4,6 +4,52 @@ A modern, responsive web application for managing logistics operations in the mi
 React, TypeScript, and Material-UI, this system provides comprehensive tools for warehouse management, truck scheduling,
 purchase orders, and appointment scheduling.
 
+# Application Screenshots
+
+#### Dashboard
+<p float="left">
+  <img src="public/frontend-screenshots/Dashboard-1.png" width="100" />
+  <img src="public/frontend-screenshots/Dashboard-2.png" width="100" />
+  <img src="public/frontend-screenshots/Dashboard-3.png" width="100" />
+  <img src="public/frontend-screenshots/Dashboard-4.png" width="100" />
+</p>
+
+#### Truck Management
+<p float="left">
+  <img src="public/frontend-screenshots/TruckManagementPage-1.png" width="100" />
+  <img src="public/frontend-screenshots/TruckManagementPage-2.png" width="100" />
+  <img src="public/frontend-screenshots/TruckDetailsPage-2.png" width="100" />
+</p>
+
+#### Warehouse Overview
+<p float="left">
+    <img src="public/frontend-screenshots/WarehouseOverviewPage-1.png" width="100" />
+    <img src="public/frontend-screenshots/WarehouseOverviewPage-2.png" width="100" />
+    <img src="public/frontend-screenshots/WarehouseDetailsPage-1.png" width="100" />
+</p>
+
+#### Purchase Orders
+<p float="left">
+    <img src="public/frontend-screenshots/PurchaseOrderPage-1.png" width="100" />
+    <img src="public/frontend-screenshots/PurchaseOrderDetailsPage.png" width="100" />
+    <img src="public/frontend-screenshots/CreatePurchaseOrderPage.png" width="100" />
+</p>
+
+#### Shipping Orders
+<p float="left">
+    <img src="public/frontend-screenshots/ShippingOrderPage-1.png" width="100" />
+    <img src="public/frontend-screenshots/ShippingOrderPage-2.png" width="100" />
+    <img src="public/frontend-screenshots/CreateShippingOrderPage.png" width="100" />
+</p>
+
+#### Appointments
+<p float="left">
+  <img src="public/frontend-screenshots/AppointmentsPage-1.png" width="100" />
+  <img src="public/frontend-screenshots/AppointmentsPage-2.png" width="100" />
+  <img src="public/frontend-screenshots/ScheduleAppointmentPage.png" width="100" />
+</p>
+
+
 ## 🛠️ Tech Stack
 
 ### Frontend Framework
@@ -69,7 +115,7 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone <https://gitlab.com/kdg-ti/programming6/students/24-25/momoduopeyemi/frontend.git>
+   git clone <https://github.com/HopeyCodeDS/frontend.git>
    cd frontend
    ```
 

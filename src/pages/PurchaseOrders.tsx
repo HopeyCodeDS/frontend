@@ -9,12 +9,6 @@ import {
   Chip,
   Button,
   Avatar,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  Divider,
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -22,20 +16,15 @@ import {
   TableHead,
   TableRow,
   IconButton,
-  Tooltip,
-  Badge,
   Tabs,
   Tab,
   LinearProgress,
   Alert
 } from '@mui/material';
 import {
-  Add as AddIcon,
   Edit as EditIcon,
   Delete as DeleteIcon,
   Visibility as ViewIcon,
-  TrendingUp as TrendingUpIcon,
-  Warning as AlertTriangleIcon,
   Event as EventIcon,
   AttachMoney as AttachMoneyIcon,
   Apartment
@@ -112,7 +101,7 @@ const PurchaseOrderCard = ({ order, onViewDetails }: {
         action={
           <Chip 
             label={order.status} 
-            color={getStatusColor(order.status) as any}
+            color={getStatusColor(order.status) as never}
             size="small"
             icon={getStatusIcon(order.status)}
           />
@@ -169,7 +158,7 @@ const PurchaseOrderCard = ({ order, onViewDetails }: {
 
 export default function PurchaseOrders() {
   const [tabValue, setTabValue] = useState(0);
-  const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
+  const [viewMode] = useState<'cards' | 'table'>('cards');
   
   // State variables for the dialog
   const [selectedPurchaseOrder, setSelectedPurchaseOrder] = useState<PurchaseOrder | null>(null);
@@ -190,7 +179,7 @@ export default function PurchaseOrders() {
     setSelectedPurchaseOrder(null);
   };
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_eventt: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
   };
 

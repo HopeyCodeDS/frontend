@@ -10,7 +10,7 @@ import Trucks from "./pages/Trucks";
 import Warehouses from "./pages/Warehouses";
 import PurchaseOrders from "./pages/PurchaseOrders";
 import ShippingOrders from "./pages/ShippingOrders";
-import Appointments from "./pages/Appointments";
+import {Appointments} from "./pages/Appointments";
 import { useState, useContext } from 'react';
 import { theme } from './theme/theme';
 import SecurityContextProvider from "./context/SecurityContextProvider.tsx";
